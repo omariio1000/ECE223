@@ -2,13 +2,23 @@ from scipy import signal
 from math import pi
 import matplotlib.pyplot as plt
 
+#Ex 1
+'''
 R = 6.28
 L = 0.1
 
-v_in = [R/L]
-v_out = [1, R/L]
+num = [R/L]
+dem = [1, R/L]
+'''
 
-tfun = signal.TransferFunction(v_in, v_out)
+#Ex 2
+R = 75
+L = 0.01
+
+num = [L, 0]
+dem = [L, R]
+
+tfun = signal.TransferFunction(num, dem)
 w, mag, phase = signal.bode(tfun)
 f = w / (2 * pi)
 
